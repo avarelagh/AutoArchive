@@ -100,14 +100,29 @@ for file in os.listdir(scanned_docs_dir):
             logging.info(
                 f'The original file: {os.path.basename(path_to_file)} was duly archived.')
 
-        # remove the just copied ocr file from scanned folder
-        os.remove(ocr_file)
+        if os.path.exists(path_to_folder):
+            # remove the just copied ocr file from scanned folder
+            os.remove(ocr_file)
 
-        # inform user and log the ocr file was just removed from scanned files
-        logging.info(
-            f'The ocr file file, {os.path.basename(ocr_file)} was just removed from scanned files folder.\n\n *** ========================================================= ***\n\n')
-        print(
-            f'The ocr file file, {os.path.basename(ocr_file)} was just removed from scanned files folder.')
+            # inform user and log the ocr file was just removed from scanned files
+            logging.info(
+                f'The ocr file file, {os.path.basename(ocr_file)} was just removed from scanned files folder.\n\n *** ========================================================= ***\n\n')
+            print(
+                f'The ocr file file, {os.path.basename(ocr_file)} was just removed from scanned files folder.')
+
+        else:
+            # creates the new name of the ocr_file not filed.
+            dest_filename = scanned_docs_dir + '\\PNA_' + \
+                os.path.basename(path_to_file)
+
+            # renames and prefixes 'PNA_' path not available to ocr file
+            os.rename(ocr_file, dest_filename)
+
+            # inform user and log the ocr file was not removed from scanned files because the path to archive was not found.
+            logging.info(
+                f'The ocr file file, {os.path.basename(ocr_file)} was NOT removed from scanned files folder.\n\n *** ========================================================= ***\n\n')
+            print(
+                f'The ocr file file, {os.path.basename(ocr_file)} was NOT removed from scanned files folder.')
 
     else:
         # inform user the email was not valid for archive.
