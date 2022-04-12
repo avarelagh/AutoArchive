@@ -1,7 +1,7 @@
 # she-bang for Python3 scripts:
 #!/usr/bin/env python3
 
-""" 
+"""
 ArchiveScannedDocs
 This Module is the main app.
 """

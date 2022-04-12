@@ -188,7 +188,7 @@ def prep_email_data(txt_ext):
 
 def get_type_doc_details(txt_ext):
     # looks for and gets the details of scanned RI and returns the RI details
-    ocr_ri_re = re.compile(r'RI\s?-\s?(\d{1,4})\s?/\s?(\d{4})')
+    ocr_ri_re = re.compile(r'R?\s?-\s?(\d{1,4})\s?/\s?(\d{4})')
     ri_desc = ocr_ri_re.search(txt_ext)
     if not ri_desc is None:
         ri_details = prep_ri_data(ri_desc)
