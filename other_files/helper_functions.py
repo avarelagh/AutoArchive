@@ -127,7 +127,7 @@ def extracts_text(pdfa_file):
         read_pdf = output_string.getvalue().strip()
     except NotImplementedError as e:
         # log the exception
-        logging.exception(e)
+        # logging.exception(e)
         print(f'Exception {e} on extract_text funtion from {pdfa_file}.')
 
     return read_pdf
