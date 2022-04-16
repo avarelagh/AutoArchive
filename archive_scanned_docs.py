@@ -2,7 +2,7 @@
 #!/usr/bin/env python3
 
 """
-ArchiveScannedDocs
+archive_scanned_docs
 This Module is the main app.
 """
 

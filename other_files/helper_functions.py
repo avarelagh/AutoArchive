@@ -26,6 +26,7 @@ def format_doc_numer(doc, nr, year):
 def prompt_user(msg):
     inp = ''
     while inp != 'y':
+    
         inp = input(msg)
         inp = 'y'
 
