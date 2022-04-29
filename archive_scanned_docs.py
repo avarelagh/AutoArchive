@@ -8,7 +8,6 @@ This Module is the main app.
 
 import os
 import logging
-from tkinter import Y
 from other_files import helper_functions
 
 logging.basicConfig(filename=r'\\ARBACKUP-PC\Arquive\Scanned Docs\Log\jobdone.log',
